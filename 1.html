@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<link rel="stylesheet" href="master.css">
+	
+</head>
+<body>
+
+<div class="launcher">
+<form name=form1 id="forms">
+      <select  id="my_select"  name=item onChange=l_image()>
+        <option value='0' >Русский
+        <option value='1' selected>Чешский
+      </select>
+      </form>
+ 
+<img src=""  id="tool">
+
+</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+pictures = new Array()
+for(i=0;i<2;i++)
+   {
+    pictures[i] = new Image()
+    if(i==0) pictures[i].src = "rassiy.gif"
+    if(i==1) pictures[i].src = "chehiy.gif"
+   }
+function l_image()
+   {
+   var tool = document.getElementById('tool');
+    document.images.tool.src = pictures[document.form1.item.selectedIndex].src
+	window.location='#';
+   }
+   
+   $("#my_select :selected").val(function(){
+if  (this.value == "0"){
+	var tool = document.getElementById('tool').src = "rassiy.gif";
+} else {
+	var tool = document.getElementById('tool').src = "chehiy.gif";
+}
+});
+</script>
+	
+</body>
+</html>
